@@ -37,7 +37,21 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                     message: 'Polo!'
                 });
             break;
-            // Just add any case commands if you want to..
+                // Just add any case commands if you want to..
+            case 'joke':
+                bot.sendMessage({
+                    to: channelID,
+                    message: 'What do you get when you cross a joke with a rhetorical question?'
+                });
+                break;
+            case 'rndint':
+                var rndint = Math.floor(Math.random() * 100);
+                bot.sendMessage({
+                    to: channelID,
+                    message: rndint
+                });
+                break;
+           
          }
      }
 });
