@@ -1,6 +1,7 @@
 var Discord = require('discord.io');
 var logger = require('winston');
 var auth = require('./auth.json');
+//var process = new process;
 
 // Configure logger settings
 logger.remove(logger.transports.Console);
@@ -21,24 +22,27 @@ bot.on('ready', function (evt) {
     logger.info(bot.username + ' - (' + bot.id + ')');
     
 });
-
-bot.on('SIGTERM', function onSigterm() {
+//dirty code
+process.on('SIGTERM', function onSigterm() {
     console.info('Got SIGTERM. Graceful shutdown start', new Date().toISOString())
     // start graceul shutdown here
     server.close(function onServerClosed(err) {
         if (err) {
             console.error(err);
-            bot.exit(1);
+            process.exit(1);
         }
         closeMyResources(function onResourcesClosed(err) {
             // error handling
-            bot.exit();
+            process.exit();
         })
     })
 })
 
-bot.on('message', function (user, userID, channelID, message, evt) {
 
+
+bot.on('message', function (user, userID, channelID, message, evt) {
+    //array containing all the commands
+    var commandlist = ['marco','randint','joke']
     // Our bot needs to know if it will execute a command
     // It will listen for messages that will start with `!`
     if (message.substring(0, 1) == '!') {
@@ -70,7 +74,19 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                     message: rndint
                 });
                 break;
-
+            default:
+                bot.sendMessage({
+                    to: channelID,
+                    message: "Sorry, I don't know that command. Here is a list of commands:\n"
+                });
+                bot.sendMessage({
+                    to: channelID,
+                    //var a
+                    for(commandlist) {
+                        Console.info("out");
+                    } 
+                });
+                break;
         }
      }
 });
