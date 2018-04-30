@@ -22,29 +22,13 @@ bot.on('ready', function (evt) {
     logger.info(bot.username + ' - (' + bot.id + ')');
     
 });
-//dirty code
-process.on('SIGTERM', function onSigterm() {
-    console.info('Got SIGTERM. Graceful shutdown start', new Date().toISOString())
-    // start graceul shutdown here
-    server.close(function onServerClosed(err) {
-        if (err) {
-            console.error(err);
-            process.exit(1);
-        }
-        closeMyResources(function onResourcesClosed(err) {
-            // error handling
-            process.exit();
-        })
-    })
-})
-
-
 
 bot.on('message', function (user, userID, channelID, message, evt) {
-    //array containing all the commands
+	
+    //Array containing all the commands
     var commandlist = ['marco','randint','joke']
-    // Our bot needs to know if it will execute a command
-    // It will listen for messages that will start with `!`
+	
+	//Bot will listen for '!'
     if (message.substring(0, 1) == '!') {
         var args = message.substring(1).split(' ');
         var cmd = args[0];
@@ -74,6 +58,26 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                     message: rndint
                 });
                 break;
+				
+			case 'away':  
+                bot.sendMessage({
+                    to: channelID,
+                    message: 'Going away...'
+                });
+				
+				bot.setPresence( {idle_since: 1} )
+				//bot.disconnect();
+                break;
+				
+				case 'destroy':  
+                bot.sendMessage({
+                    to: channelID,
+                    message: 'Bye bye!'
+                });
+				
+				bot.disconnect();
+                break;
+				
             default:
                 bot.sendMessage({
                     to: channelID,
