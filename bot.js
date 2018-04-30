@@ -40,13 +40,13 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                 // Just add any case commands if you want to..
             case 'joke':
                 var jokelist = ['What do you get when you cross a joke with a rhetorical question?', 'A man walks into a library and asks, "Can I have a cheeseburger?" The librarian says, "Sir, this is a library." The man whispers, "Can I have a cheeseburger?"','I told the doctor I broke my arm in two places. He told me not to go into those places.','What time did the man go to the dentist? Tooth hurt-y.',"Did you know the first French fries weren't actually cooked in France? They were cooked in Greece.",'If you see a robbery at an Apple Store does that make you an iWitness?','A ham sandwich walks into a bar and orders a beer. The bartender says, "Sorry we don’t serve food here."'];
-                var pickjoke = Math.floor(Math.random() * jokelist.length);
+                var pickjoke = Math.floor(Math.random() * (jokelist.length)-1);
                 bot.sendMessage({
                     to: channelID,
-                    message: jokelist.length +""+ jokelist[pickjoke]
+                    message: jokelist[pickjoke]
                 });
                 break;
-            case 'rndint':
+            case 'randint':
                 var rndint = Math.floor(Math.random() * 100);
                 bot.sendMessage({
                     to: channelID,
