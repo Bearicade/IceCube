@@ -6,6 +6,8 @@
   "author": "DigiVenn & Alattice",
   "dependencies": {
     "discord.io": "github:woor/discord.io#gateway_v6",
+    "discord.js": "^11.3.2",
+    "opusscript": "0.0.6",
     "winston": "^2.4.2"
   }
 }
