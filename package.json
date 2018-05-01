@@ -2,7 +2,7 @@
   "name": "BoC-botV.1",
   "version": "1.0.0",
   "description": "Badgers of Camelot Discord Bot",
-  "main": "bot.js",
+  "main": "client.js",
   "author": "DigiVenn & Alattice",
   "dependencies": {
     "discord.io": "github:woor/discord.io#gateway_v6",
