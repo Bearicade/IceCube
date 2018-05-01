@@ -32,12 +32,13 @@ bot.on('message', function (user, userID, channelID, message, evt) {
     if (message.substring(0, 1) == '!') {
         var args = message.substring(1).split(' ');
 		    console.log('args after split: ' + args);
-        var cmd = args[0];
-        console.log('cmd after assigned args[0]: ' + cmd);
-        args = args.splice(1);
-        console.log('args after splice:' + args);
 
+while (args[0] != null)  {
+  var cmd = args[0];
+  console.log('cmd after assigned args[0]: ' + cmd);
         switch(cmd) {
+
+
 
           case 'boneless':
           bot.sendMessage({
@@ -101,6 +102,11 @@ bot.on('message', function (user, userID, channelID, message, evt) {
                     }
                 });
                 break;
+              }
+               args = args.splice(1);
+
+               console.log('args after splice:' + args);
+               
         }
      }
 });
