@@ -1,34 +1,39 @@
-function runCommand(cmd)  {
+module.exports = function() {
+  this.runCommand = function(prefix, client, msg, cmd) {
 
-  //Start comparing and analyzing commands
-  //Switch cases are temporary; implement only small processes
-  switch (cmd)  {
-    //For fun, text responses
-    case 'ping':
-      msg.channel.send("Pong!");
-    break;
+    //Start comparing and analyzing commands
+    //Switch cases are temporary; implement only small processes
+    switch (cmd)  {
 
-    //Destroy the bot, but not really
-    case 'destroy':
-      msg.channel.send("Bye bye!");
-      client.destroy();
-    break;
+      //For fun, text responses
+      case 'ping':
+        msg.channel.send("Pong!");
+      break;
 
-    //Disconnecting the client
-    case 'exit':
-      msg.channel.send("Disconnecting...");
-      client.destroy();
-    break;
+      //Destroy the bot, but not really
+      case 'destroy':
+        msg.channel.send("Bye bye!");
+        client.destroy();
+      break;
 
-    case 'list':
-      msg.channel.send("```These are my current commands:\n" +
+      //Disconnecting the client
+      case 'exit':
+        msg.channel.send("Going to sleep...");
+        client.destroy();
+      break;
 
-      "```");
-    break;
+      case 'list':
+        msg.channel.send("```These are my current commands:\n" +
 
-    //Default reply, unrecognized command
-    default:
-      msg.channel.send("Sorry, I don't know that command. " +
-      "Type `" + prefix + "list` for a list of commands.");
-  }
+        "```");
+      break;
+
+      //Default reply, unrecognized command
+      default:
+        msg.channel.send("Sorry, I don't know that command. " +
+        "Type `" + prefix + "list` for a list of commands.");
+    }
+}
+
+
 }
