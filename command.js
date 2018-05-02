@@ -53,6 +53,10 @@ module.exports = function () {
                 msg.channel.send("**B O N E L E S S**");
                 break;
 
+            case 'about':   //will fetch about from user file 
+                msg.channel.send("*command in development...*");
+                break;
+
                 //Default reply, unrecognized command
             default:
                 msg.channel.send("Sorry, I don't know that command. " +
