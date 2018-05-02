@@ -25,8 +25,12 @@ module.exports = function () {
                 break;
 
             case 'list':
-                msg.channel.send("```These are my current commands:\n" +
-                "ping: replies with pong\n" + "```");
+                msg.channel.send("```These are my current commands:\n\n" +
+                "Ping: Pong!\n" +
+                "Marco: Polo!\n" +
+                "Roll [#]: Rolls a random number within the specified parameter.\n" +
+                "Joke: Gives you a very bad joke probably.\n" +
+                "Kill: Would you do such a thing?\n" + "```");
                 break;
 
             case 'joke':
