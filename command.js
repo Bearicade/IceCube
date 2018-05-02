@@ -12,6 +12,7 @@ module.exports = function () {
                 msg.channel.send("```These are my current commands:\n\n" +
                 "- ping: Pong!\n" +
                 "- marco: Polo!\n" +
+                "- hi/hello: Say hi to the bot!\n" +
                 "- roll [#]: Rolls a random number within the specified parameter.\n" +
                 "- joke: Gives you a very bad joke, probably.\n" + "```");
                 break;
@@ -61,6 +62,9 @@ module.exports = function () {
                 msg.channel.send("Polo!");
                 break;
 
+            case 'hola':
+            case 'greetings':
+            case 'greet':
             case 'hello': //takes both 'hi' and 'hello'
             case 'hi':
                 msg.channel.send(media.greetings[
