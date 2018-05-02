@@ -19,9 +19,9 @@ client.on('guildMemberAdd', member => {
   .then(console.log)
   .catch(console.error);
 
-  member.guild.channels.find('name', 'bot-prompt') //welcomes user
+  member.guild.channels.find('name', config.channel[0]) //welcomes user
   .send('Welcome to ' + config.server +
-  `, ${member}., You are now one of our ` +
+  `, ${member}. You are now one of our ` +
   config.initRole[1] + '!');
 });
 

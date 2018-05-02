@@ -1,5 +1,6 @@
 {
   "prefix": "$",
   "server": "BoC; Development Server",
+  "channel": ["bot-prompt"],
   "initRole": ["440584224559333385", "Alpha Testers"]
 }
