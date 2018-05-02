@@ -25,5 +25,12 @@
 		"*dying sounds*",
 		"Was it worth it...? :(",
 		"I thought we were friends..."
+	],
+
+	"exitfail": [
+		"INSUFFICIENT POWER LEVEL: YOU CANNOT KILL ME.",
+		"I cannot die (✿◕‿◕)~",
+		"Press '1' to try again.",
+		"Two plus two is T͎̖̺̎̄̿̎ͪ̓̄ͧ̓͞Ę̥̽̑͗ͦͣN̒̓̾̔̉͌͏̲͓͇̠͖̰͖̲... in base FOUR. I'm FINE.",
 	]
 }
