@@ -35,7 +35,8 @@ client.on('message', msg => {
   var args = msg.content.substring(1).split(' '); //splits command at every space and creates array
   var cmd = args.shift().toLowerCase(); //removes and returns first item; convert to lowercase
 
-  //Prints args and cmd to console for debugging
+  //Prints user, args, and cmd to console for debugging
+  console.log("\nuser: " + `${msg.author.username}`);
   console.log("args[]: " + args);
   console.log("command: " + cmd);
 
