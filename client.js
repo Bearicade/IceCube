@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const auth = require('./auth.json'); //fetching and saving token
 const config = require('./config.json'); //fetching config information
+const fs = require('fs');
 
 require('./command.js')();
 
@@ -20,10 +21,12 @@ client.on('guildMemberAdd', member => {
   .then(console.log)
   .catch(console.error);
 
+  //Create a file for the user
+  fs.appendFile('./userdata/' + member.user.username + '_data.txt', "");
+
   //Welcomes user an finds the channel using member properties
   member.guild.channels.find('name', config.channel[0])
-  .send('Welcome to ' + config.server + `, ${member}.
-  You are now one of our ` + config.initRole[1] + '!');
+  .send('Welcome to ' + config.server + `, ${member}. You are now one of our ` + config.initRole[1] + '!');
 });
 
 client.on('message', msg => {
