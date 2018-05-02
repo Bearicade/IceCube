@@ -41,6 +41,10 @@ module.exports = function () {
                 }
                 break;
 
+            case 'boneless':
+                msg.channel.send("**B O N E L E S S**");
+                break;
+
                 //Default reply, unrecognized command
             default:
                 msg.channel.send("Sorry, I don't know that command. " +
