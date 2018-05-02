@@ -1,4 +1,4 @@
-const media = require("./media.json");
+var media = require("./media.json");
 const config = require("./config.json");
 
 module.exports = function () {
@@ -29,6 +29,28 @@ module.exports = function () {
                     ]);
                     client.destroy();
                 } else {
+
+                  switch (msg.member._roles[0]) { //kill command will reference the roles
+                    case config.initRole[0]:  //in case of lowest level role
+                      for (var i = 0; i < media.failRoleLow.length; i++)  {  //loop through failRoleLow[] to append to exitfail[]
+                        media.exitfail.push(media.failRoleLow[i]);
+                      }
+                      break;
+
+                    /*case config.modRole[0]:  //in case of mod level role
+                      for (i = 0; i < media.failRoleMod.length; i++)  {  //loop through failRoleMod[] to append to exitfail[]
+                        media.exitfail.push(media.failRoleMod[i]);
+                      }
+                      break;*/
+
+                    /*case config.foolRole[0]:  //in case of fool level role
+                      for (i = 0; i < media.failRoleFool.length; i++)  {  //loop through failRoleFool[] to append to exitfail[]
+                        media.exitfail.push(media.failRoleFool[i]);
+                      }
+                      break;*/
+                  }
+
+                    //Will now take the final array and execute
                     msg.channel.send(media.exitfail[
                       (Math.round(Math.random() * (media.exitfail.length - 1)))
                     ]);

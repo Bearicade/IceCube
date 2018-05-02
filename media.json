@@ -51,6 +51,12 @@
 		"Checking power level... *error: not over 9000.*"
 	],
 
+	"failRoleLow":	[
+		"You are only one badger. What can you hope to do?",
+		"You will need to train harder, badger padawan.",
+		"Did you know that a group of badgers is called a clan? You'll probably need one first."
+	],
+
 	"greetings":	[
 		"Amigo! Hola, ",
 		"Hey, ",
