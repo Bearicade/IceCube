@@ -18,9 +18,17 @@
 	],
 
 	"exits": [
+		"Closing...",
+		"Terminating connection.",
+		"Exiting client...",
+		"Going to sleep...",
+		"Disconnecting...",
 		"Et tu, Brute...",
 		"You too, Brutus...?",
 		"No hard feelings...",
+		"Shutting down...",
+		"Closing connection.",
+		"Terminating...",
 		"*Why...*",
 		"*dying sounds*",
 		"Was it worth it...? :(",
