@@ -22,11 +22,15 @@ client.on('guildMemberAdd', member => {
   .catch(console.error);
 
   //Create a file for the user
-  fs.appendFile('./userdata/' + member.user.username + '_data.txt', "");
+  fs.appendFile('./userdata/' + member.user.username);
 
   //Welcomes user an finds the channel using member properties
   member.guild.channels.find('name', config.channel[0])
   .send('Welcome to ' + config.server + `, ${member}. You are now one of our ` + config.initRole[1] + '!');
+});
+
+client.on('guildMemberRemove', member => {
+  fs.unlink('./userdata/' + member.user.username);
 });
 
 client.on('message', msg => {
