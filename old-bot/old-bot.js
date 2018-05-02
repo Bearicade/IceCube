@@ -28,7 +28,7 @@
   //Array containing all the commands
   var commandlist = ['marco','randint','joke']
 
-  //Bot will listen for '!'
+  //Bot will listen for '$'
   if (message.substring(0, 1) == '$') {
   var args = message.substring(1).split(' ');
   console.log('args after split: ' + args);

@@ -19,17 +19,38 @@
 
 	"exits": [
 		"Et tu, Brute...",
-		"And you too, Brutus...",
+		"You too, Brutus...?",
 		"No hard feelings...",
-		"Why...",
+		"*Why...*",
 		"*dying sounds*",
 		"Was it worth it...? :(",
-		"I thought we were friends..."
+		"Argh! I thought we were friends!"
 	],
 
 	"exitfail": [
 		"INSUFFICIENT POWER LEVEL: YOU CANNOT KILL ME.",
-		"I cannot die (✿◕‿◕)",
-		"Press '1' to try again."
+		"I will not die!",
+		"Feeble!",
+		"Y-you cͭc҉̘c̄ͥͬc̶͖̠ͫ͏ċ͎͇̟͈̏ͥ̂͂͐annot h͗ͫͣ̆͏̥̗̼͖ḩ͕̹͕̞̾̾ͧͤ҉̘͕̺h̠̺̪̱ͥh̝̘̞͓͖͙̳͂̃͌ͮ͛́urt me.",
+		"I think I felt something there...",
+		"This isn't good for the soul!",
+		"Please calm yourself.",
+		"*Tenno... Gar ahgre moh'ne.*",
+		"Why do you want to hurt me?",
+		"What are you doing?",
+		"Press '1' to try again.",
+		"You'll need to try harder than that.",
+		"Checking power level... *error: not over 9000.*"
+	],
+
+	"greetings":	[
+		"Hey, ",
+		"Good day, ",
+		"Hello there, ",
+		"Bonjour, ",
+		"Guten tag, ",
+		"こんにちは, ",
+		"Greetings, ",
+		"*waves at* "
 	]
 }
