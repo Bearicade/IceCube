@@ -39,7 +39,7 @@ client.on('message', msg => {
   console.log("args[]: " + args);
   console.log("command: " + cmd);
 
-  runCommand(config.prefix, client, msg, cmd);
+  runCommand(config.prefix, client, msg, cmd, args);
 });
 
 client.login(auth.token);

@@ -1,6 +1,6 @@
 const media = require("./media.json");
 module.exports = function () {
-    this.runCommand = function (prefix, client, msg, cmd) {
+    this.runCommand = function (prefix, client, msg, cmd, args) {
 
         //Start comparing and analyzing commands
         //Switch cases are temporary; implement only small processes
@@ -18,20 +18,26 @@ module.exports = function () {
                 break;
 
                 //Disconnecting the client
-            case 'exit':
-                msg.channel.send("Going to sleep...");
+            case 'kill':
+                msg.channel.send("Et tu, Brutus...");
                 client.destroy();
                 break;
 
             case 'list':
                 msg.channel.send("```These are my current commands:\n" +
-
-                "```");
+                "ping: replies with pong\n" + "```");
                 break;
 
             case 'joke':
-                msg.channel.send(media.jokes[(Math.floor(Math.random() * (media.jokes.length-1)) 
-                    )]);
+                msg.channel.send(media.jokes[(Math.floor(Math.random() * (media.jokes.length - 1)))]);
+                break;
+
+            case 'roll':
+                if (isNaN(parseInt(args[0]))) {
+                    msg.channel.send("Invalid entry. Please enter number after " + prefix + "roll.");
+                } else {
+                    msg.channel.send(Math.floor(Math.random() * args[0]));
+                }
                 break;
 
                 //Default reply, unrecognized command
