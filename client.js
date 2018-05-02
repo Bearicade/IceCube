@@ -17,6 +17,8 @@ client.on('disconnect', () => {
 
 //Puts a new user into level one role from the ID given in config.json
 client.on('guildMemberAdd', member => {
+  console.log(`\n${member.user.username} has joined the server.\n`);
+
   member.addRole(config.initRole[0])
   .then(console.log)
   .catch(console.error);
