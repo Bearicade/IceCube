@@ -14,12 +14,14 @@ client.on('disconnect', () => {
     console.log(`${client.user.tag} has logged out.`);
 });
 
+//Puts a new user into level one role from the ID given in config.json
 client.on('guildMemberAdd', member => {
-  member.addRole(config.initRole[0])  //puts user into level one role
+  member.addRole(config.initRole[0])
   .then(console.log)
   .catch(console.error);
 
-  member.guild.channels.find('name', config.channel[0]) //welcomes user
+  //Welcomes user an finds the channel using member properties
+  member.guild.channels.find('name', config.channel[0])
   .send('Welcome to ' + config.server +
   `, ${member}. You are now one of our ` +
   config.initRole[1] + '!');
