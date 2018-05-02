@@ -18,10 +18,6 @@ module.exports = function () {
                 break;
 
             case 'destroy': //Destroy the bot, but not really
-                msg.channel.send("Bye bye!");
-                client.destroy();
-                break;
-
             case 'kill':  //Disconnecting the client
                 if (msg.member._roles.includes(config.adminRole[0])) {
                     msg.channel.send(media.exits[
