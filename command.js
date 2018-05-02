@@ -25,7 +25,7 @@ module.exports = function () {
                     msg.channel.send(media.exits[(Math.floor(Math.random() * (media.exits.length - 1)))]);
                     client.destroy();
                 } else {
-                    msg.channel.send("Insufficient power level; you cannot kill me!");
+                    msg.channel.send("INSUFFICIENT POWER LEVEL: YOU CANNOT KILL ME.");
                 }
                 break;
 
