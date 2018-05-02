@@ -1,4 +1,5 @@
 const media = require("./media.json");
+
 module.exports = function () {
     this.runCommand = function (prefix, client, msg, cmd, args) {
 
@@ -19,7 +20,7 @@ module.exports = function () {
 
                 //Disconnecting the client
             case 'kill':
-                msg.channel.send("Et tu, Brutus...");
+                msg.channel.send(config.exits[(Math.floor(Math.random() * (media.exits.length - 1)))]);
                 client.destroy();
                 break;
 

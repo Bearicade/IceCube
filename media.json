@@ -14,13 +14,14 @@
 		"Why is Peter Pan always flying? He neverlands!",
 		"Two satellites decided to get married. The wedding wasn't much, but the reception was incredible!",
 		"What did the astronaut's fiancée say when he proposed in open space? I can't breathe!"
-	]
-	
-	"exits":[
+	],
+
+	"exits": [
 		"Et tu, Brute...",
 		"And you too, Brutus...",
 		"No hard feelings...",
 		"Why...",
-		""
+		"*dying sounds*",
+		"I thought we were friends..."
 	]
 }
