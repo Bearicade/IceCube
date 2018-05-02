@@ -1,4 +1,5 @@
 const media = require("./media.json");
+const config = require("./config.json");
 
 module.exports = function () {
     this.runCommand = function (prefix, client, msg, cmd, args) {
@@ -20,8 +21,10 @@ module.exports = function () {
 
                 //Disconnecting the client
             case 'kill':
-                msg.channel.send(media.exits[(Math.floor(Math.random() * (media.exits.length - 1)))]);
-                client.destroy();
+                if (msg.member._roles.includes(config.adminRole[0])) {
+                    msg.channel.send(media.exits[(Math.floor(Math.random() * (media.exits.length - 1)))]);
+                    client.destroy();
+                }
                 break;
 
             case 'list':
@@ -40,7 +43,7 @@ module.exports = function () {
                 if (isNaN(parseInt(args[0]))) {
                     msg.channel.send("Invalid entry. Please enter number after " + prefix + "roll.");
                 } else {
-                    msg.channel.send(Math.floor(Math.random() * args[0])+1);
+                    msg.channel.send(Math.floor(Math.random() * args[0]) + 1);
                 }
                 break;
 
