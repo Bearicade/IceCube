@@ -24,6 +24,8 @@ module.exports = function () {
                 if (msg.member._roles.includes(config.adminRole[0])) {
                     msg.channel.send(media.exits[(Math.floor(Math.random() * (media.exits.length - 1)))]);
                     client.destroy();
+                } else {
+                    msg.channel.send("Insufficient power level; you cannot kill me!");
                 }
                 break;
 
