@@ -22,10 +22,10 @@ module.exports = function () {
                 //Disconnecting the client
             case 'kill':
                 if (msg.member._roles.includes(config.adminRole[0])) {
-                    msg.channel.send(media.exits[(Math.floor(Math.random() * (media.exits.length - 1)))]);
+                    msg.channel.send(media.exits[(Math.round(Math.random() * (media.exits.length - 1)))]);
                     client.destroy();
                 } else {
-                    msg.channel.send(media.exitfail[(Math.floor(Math.random() * (media.exitfail.length - 1)))]);
+                    msg.channel.send(media.exitfail[(Math.round(Math.random() * (media.exitfail.length - 1)))]);
                 }
                 break;
 
@@ -38,7 +38,7 @@ module.exports = function () {
                 break;
 
             case 'joke':
-                msg.channel.send(media.jokes[(Math.floor(Math.random() * (media.jokes.length - 1)))]);
+                msg.channel.send(media.jokes[(Math.round(Math.random() * (media.jokes.length - 1)))]);
                 break;
 
             case 'roll':
