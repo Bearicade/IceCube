@@ -19,9 +19,9 @@ client.on('disconnect', () => {
 client.on('guildMemberAdd', member => {
   console.log(`\n${member.user.username} has joined the server.\n`);
 
-  member.addRole(config.initRole[0])
+  member.addRole(config.initRole[0])/*
   .then(console.log)
-  .catch(console.error);
+  .catch(console.error)*/;
 
   //Create a file for the user
   fs.appendFile('./userdata/' + member.user.username, "");
