@@ -20,7 +20,7 @@ module.exports = function () {
 
                 //Disconnecting the client
             case 'kill':
-                msg.channel.send(config.exits[(Math.floor(Math.random() * (media.exits.length - 1)))]);
+                msg.channel.send(media.exits[(Math.floor(Math.random() * (media.exits.length - 1)))]);
                 client.destroy();
                 break;
 
