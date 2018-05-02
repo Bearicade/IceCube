@@ -6,17 +6,18 @@
 		"What time did the man go to the dentist? Tooth hurt-y.",
 		"Did you know the first French fries weren't actually cooked in France? They were cooked in Greece.",
 		"If you see a robbery at an Apple Store does that make you an iWitness?",
-		"A ham sandwich walks into a bar and orders a beer. The bartender says, \"Sorry we don?t serve food here.\"",
+		"A ham sandwich walks into a bar and orders a beer. The bartender says, \"Sorry we don't serve food here.\"",
 		"Why did the hipster burn their tongue on their coffee? Because they drank it before it was cool!",
 		"Did you hear about the guy who fell into an upholstery factory? He's fully recovered now.",
 		"What do you call a belt made out of watches? A waist of time!",
 		"Why did the picture go to jail? Because they were framed!",
 		"Why is Peter Pan always flying? He neverlands!",
 		"Two satellites decided to get married. The wedding wasn't much, but the reception was incredible!",
-		"What did the astronaut's fiancée say when he proposed in open space? I can't breathe!"
+		"What did the astronaut's fiancée say when he proposed in open space? I can't breathe!",
+		"What did the janitor say when he jumped out of the closet? Supplies!"
 	],
 
-	"exits":	[
+	"exits": [
 		"Et tu, Brute...",
 		"And you too, Brutus...",
 		"No hard feelings...",

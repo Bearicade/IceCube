@@ -43,7 +43,7 @@ module.exports = function () {
                 if (isNaN(parseInt(args[0]))) {
                     msg.channel.send("Invalid entry. Please enter number after " + prefix + "roll.");
                 } else {
-                    msg.channel.send(Math.floor(Math.random() * args[0]) + 1);
+                    msg.channel.send(Math.ceil(Math.random() * args[0]));
                 }
                 break;
 
