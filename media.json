@@ -35,7 +35,7 @@
 		"Argh! I thought we were friends!"
 	],
 
-	"exitfail": [
+	"exitfails": [
 		"INSUFFICIENT POWER LEVEL: YOU CANNOT KILL ME.",
 		"I will not die!",
 		"Feeble!",
@@ -48,18 +48,23 @@
 		"What are you doing?",
 		"Press '1' to try again.",
 		"You'll need to try harder than that.",
-		"Checking power level... *error: not over 9000.*"
+		"Checking power level... *error: not over 9000.*",
+		"Try again?"
 	],
 
 	"failRoleLow":	[
 		"You are only one badger. What can you hope to do?",
 		"You will need to train harder, badger.",
 		"You and what army, badger?",
+		"Is that a toy sword?",
+		"How cute.",
 		"Did you know that a group of badgers is called a clan? You'll probably need one first."
 	],
 
 	"failRoleFool":	[
-		"You think you can kill me, but you are merely a fool."
+		"You think you can kill me, but you are merely a fool.",
+		"There is a reason they made you a fool.",
+		"You may be the king's jester, but you'll *never* outwit me!"
 	],
 
 	"greetings":	[
@@ -71,6 +76,8 @@
 		"Guten tag, ",
 		"こんにちは, ",
 		"Greetings, ",
-		"*waves at* "
+		"*waves at* ",
+		"*wags tail at* ",
+		"*barks at* "
 	]
 }

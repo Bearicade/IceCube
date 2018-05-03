@@ -25,8 +25,8 @@ client.on('guildMemberAdd', member => {
 
   //Create a file for the user
   fs.appendFile('./userdata/' + member.user.username, "", (err) => {
-    if (!err) return;
-    console.error(err);
+    if (!err) return; //if callback does not return error, continue
+    console.error(err); //print to console if error occurs
   });
 
   //Welcomes user an finds the channel using member properties
@@ -37,8 +37,8 @@ client.on('guildMemberAdd', member => {
 //removes user file when they leave server
 client.on('guildMemberRemove', member => {
     fs.unlink('./userdata/' + member.user.username, (err) => {
-      if (!err) return;
-      console.error(err);
+      if (!err) return; //if callback does not return error, continue
+      console.error(err); //if file not found, we need to terminate (probably should check for existence)
     });
 });
 
