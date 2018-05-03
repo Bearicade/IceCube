@@ -17,14 +17,17 @@ client.on('disconnect', () => {
 
 //Puts a new user into level one role from the ID given in config.json
 client.on('guildMemberAdd', member => {
-  console.log(`\n${member.user.username} has joined the server.\n`);
+  console.log(`\n${member.user.username} has joined the server.`);
 
   member.addRole(config.initRole[0])/*
   .then(console.log)
   .catch(console.error)*/;
 
   //Create a file for the user
-  fs.appendFile('./userdata/' + member.user.username, "");
+  fs.appendFile('./userdata/' + member.user.username, "", (err) => {
+    if (!err) return;
+    console.error(err);
+  });
 
   //Welcomes user an finds the channel using member properties
   member.guild.channels.find('name', config.channel[0])
@@ -33,7 +36,10 @@ client.on('guildMemberAdd', member => {
 
 //removes user file when they leave server
 client.on('guildMemberRemove', member => {
-    fs.unlink('./userdata/' + member.user.username);
+    fs.unlink('./userdata/' + member.user.username, (err) => {
+      if (!err) return;
+      console.error(err);
+    });
 });
 
 client.on('message', msg => {
