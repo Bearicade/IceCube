@@ -9,10 +9,18 @@ require('./command.js')();
 client.on('ready', () => { //prints to console when logged in and sets playing status
   console.log(`Logged in as ${client.user.tag}`);
   client.user.setActivity(`I am your bot!`);
+
+  fs.readFile('./config.json', (err, data) => {
+    if (!err) {
+      console.log(data.toString())
+    } else {
+      console.error(err)
+    }
+  })
 });
 
 client.on('disconnect', () => {
-    console.log(`${client.user.tag} has logged out.`);
+  console.log(`${client.user.tag} has logged out.`);
 });
 
 //Puts a new user into level one role from the ID given in config.json
@@ -37,10 +45,15 @@ client.on('guildMemberAdd', member => {
 //removes user file when they leave server
 client.on('guildMemberRemove', member => {
   console.log(`\n${member.user.username} has left the server.`);
-    fs.unlink('./userdata/' + member.user.id, (err) => {
-      if (!err) return; //if callback does not return error, continue
-      console.error(err); //if file not found, we need to terminate (probably should check for existence)
-    });
+  fs.unlink('./userdata/' + member.user.id, (err) => {
+    if (!err) return; //if callback does not return error, continue
+    if (err.code === 'ENOENT') {
+      console.error('Failure attempt removing file.' + member.user.username + '\'s data does not exist.');
+      return; //print to console if file does not exists in case of 'ENOENT' error
+    } else {
+      console.error(err);
+    }
+  });
 });
 
 client.on('message', msg => {

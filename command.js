@@ -1,11 +1,12 @@
 var media = require("./media.json");
+var profiles = require ("./userdata/profiles.json");
 const config = require("./config.json");
 
-module.exports = function () {
-  this.runCommand = function (prefix, client, msg, cmd, args) {
+module.exports = function ()  {
+  runCommand = function (prefix, client, msg, cmd, args) {
 
-    //Start comparing and analyzing commands
-    //Switch cases are temporary; implement only small processes
+//Start comparing and analyzing commands
+//Switch cases are temporary; implement only small processes
     switch (cmd) {
 
       case 'list':  //lists the public commands
@@ -25,94 +26,91 @@ module.exports = function () {
         ]);
         client.destroy();
       } else {
-
         switch (msg.member._roles[0]) { //kill command will reference the roles
           case config.initRole[0]:  //in case of lowest level role
-          for (var i = 0; i < media.failRoleLow.length; i++)  {  //loop through failRoleLow[] to append to exitfails[]
+          for (let i = 0; i < media.failRoleLow.length; i++)  {  //loop through failRoleLow[] to append to exitfails[]
             media.exitfails.push(media.failRoleLow[i]);
-          }
-          break;
+          } break;
 
           /*case config.modRole[0]:  //in case of mod level role
           for (i = 0; i < media.failRoleMod.length; i++)  {  //loop through failRoleMod[] to append to exitfails[]
-          media.exitfails.push(media.failRoleMod[i]);
+            media.exitfails.push(media.failRoleMod[i]);
+          } break;*/
+
+          /*case config.foolRole[0]:  //in case of fool level role
+          for (i = 0; i < media.failRoleFool.length; i++)  {  //loop through failRoleFool[] to append to exitfails[]
+            media.exitfails.push(media.failRoleFool[i]);
+          } break;*/
         }
-        break;*/
 
-        /*case config.foolRole[0]:  //in case of fool level role
-        for (i = 0; i < media.failRoleFool.length; i++)  {  //loop through failRoleFool[] to append to exitfails[]
-        media.exitfails.push(media.failRoleFool[i]);
+        //Will now take the final array and execute
+        msg.channel.send(media.exitfails[
+          (Math.round(Math.random() * (media.exitfails.length - 1)))
+        ]);
       }
-      break;*/
+      break;
+
+      case 'joke':  //random joke
+      msg.channel.send(media.jokes[
+        (Math.round(Math.random() * (media.jokes.length - 1)))
+      ]);
+      break;
+
+      case 'roll':  //roll random number within parameter
+      if (isNaN(parseInt(args[0]))) {
+        msg.channel.send("Invalid entry. Please enter number after " + prefix + "roll.");
+      } else {
+        msg.channel.send("`rolled " + Math.ceil(Math.random() * args[0]) + "`");
+      } break;
+
+      case 'about':   //will fetch about from user file
+      //user undefined
+      //msg.channel.send("Alias: " + profiles.user.alias + "\nChannel(s): " + profiles.user.channels + "\nAbout: " + profiles.user.about);
+      break;
+
+      case 'intro':   //will write intro into user file
+      msg.channel.send("*command in development...*");
+      break;
+
+      //For fun, text responses
+      case 'ping':
+      msg.channel.send("Pong!");
+      break;
+
+      case 'marco':
+      msg.channel.send("Polo!");
+      break;
+
+      case 'pokes': //don't feel good about this command because it mentions people
+      case 'poke':
+      if (msg.mentions.users.first() && !msg.isMentioned(client.user))  {
+        /*var usersMentioned = [];
+        for (var i = 1; i < msg.mentions.users.array().length; i++)  {
+          usersMentioned.push(" and " + msg.mentions.users.array()[i]);
+        }*/
+        msg.channel.send("I won't poke them, because the admin told me not to!") //*`*${msg.member} pokes ${msg.mentions.users.first()}!*` + usersMentioned);
+      } else {
+        msg.channel.send(`*pokes ${msg.member} back*`);
+      } break;
+
+      case 'gutentag':
+      case 'hola':
+      case 'greetings':
+      case 'greet':
+      case 'hello': //takes both 'hi' and 'hello'
+      case 'hi':
+      msg.channel.send(media.greetings[
+        (Math.round(Math.random() * (media.greetings.length - 1)))
+      ] + `*${msg.member}!*`);
+      break;
+
+      case 'boneless':
+      msg.channel.send("**B O N E L E S S**");
+      break;
+
+      default:  //default reply, unrecognized command
+      msg.channel.send("Sorry, I don't know that command. " +
+      "Type `" + prefix + "list` for a list of commands.");
     }
-
-    //Will now take the final array and execute
-    msg.channel.send(media.exitfails[
-      (Math.round(Math.random() * (media.exitfails.length - 1)))
-    ]);
   }
-  break;
-
-  case 'joke':  //random joke
-  msg.channel.send(media.jokes[
-    (Math.round(Math.random() * (media.jokes.length - 1)))
-  ]);
-  break;
-
-  case 'roll':  //roll random number within parameter
-  if (isNaN(parseInt(args[0]))) {
-    msg.channel.send("Invalid entry. Please enter number after " + prefix + "roll.");
-  } else {
-    msg.channel.send("`rolled " + Math.ceil(Math.random() * args[0]) + "`");
-  }
-  break;
-
-  case 'about':   //will fetch about from user file
-  msg.channel.send("*command in development...*");
-  break;
-
-  //For fun, text responses
-  case 'ping':
-  msg.channel.send("Pong!");
-  break;
-
-  case 'marco':
-  msg.channel.send("Polo!");
-  break;
-
-  case 'pokes': //don't feel good about this command because it mentions people
-  case 'poke':
-  /*if (msg.mentions.users.first() && !msg.isMentioned(client.user))  {
-    var usersMentioned = [];
-    for (var i = 1; i < msg.mentions.users.array().length; i++)  {
-      usersMentioned.push(" and " + msg.mentions.users.array()[i]);
-    }
-    msg.channel.send(`*${msg.member} pokes ${msg.mentions.users.first()}!*` + usersMentioned);
-  } else {*/ //remember to uncomment the bracket when this is uncommented
-    msg.channel.send(`*pokes ${msg.member} back*`);
-  //}
-  break;
-
-  case 'gutentag':
-  case 'hola':
-  case 'greetings':
-  case 'greet':
-  case 'hello': //takes both 'hi' and 'hello'
-  case 'hi':
-  msg.channel.send(media.greetings[
-    (Math.round(Math.random() * (media.greetings.length - 1)))
-  ] + `*${msg.member}!*`);
-  break;
-
-  case 'boneless':
-  msg.channel.send("**B O N E L E S S**");
-  break;
-
-  default:  //default reply, unrecognized command
-  msg.channel.send("Sorry, I don't know that command. " +
-  "Type `" + prefix + "list` for a list of commands.");
-}
-}
-
-
 }
