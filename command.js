@@ -1,5 +1,4 @@
 var media = require("./media.json");
-var profiles = require ("./userdata/profiles.json");
 const config = require("./config.json");
 
 module.exports = function ()  {
@@ -64,8 +63,7 @@ module.exports = function ()  {
       } break;
 
       case 'about':   //will fetch about from user file
-      //user undefined
-      //msg.channel.send("Alias: " + profiles.user.alias + "\nChannel(s): " + profiles.user.channels + "\nAbout: " + profiles.user.about);
+      msg.channel.send("*command in development...*");
       break;
 
       case 'intro':   //will write intro into user file
