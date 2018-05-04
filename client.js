@@ -24,7 +24,7 @@ client.on('guildMemberAdd', member => {
   .catch(console.error)*/;
 
   //Create a file for the user
-  fs.appendFile('./userdata/' + member.user.username, "", (err) => {
+  fs.appendFile('./userdata/' + member.user.id, "", (err) => {
     if (!err) return; //if callback does not return error, continue
     console.error(err); //print to console if error occurs
   });
@@ -36,7 +36,8 @@ client.on('guildMemberAdd', member => {
 
 //removes user file when they leave server
 client.on('guildMemberRemove', member => {
-    fs.unlink('./userdata/' + member.user.username, (err) => {
+  console.log(`\n${member.user.username} has left the server.`);
+    fs.unlink('./userdata/' + member.user.id, (err) => {
       if (!err) return; //if callback does not return error, continue
       console.error(err); //if file not found, we need to terminate (probably should check for existence)
     });

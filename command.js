@@ -80,18 +80,18 @@ module.exports = function () {
   msg.channel.send("Polo!");
   break;
 
-  /*case 'pokes': //don't feel good about this command because it mentions people
+  case 'pokes': //don't feel good about this command because it mentions people
   case 'poke':
-  if (msg.mentions.users.first() && !msg.isMentioned(client.user))  {
+  /*if (msg.mentions.users.first() && !msg.isMentioned(client.user))  {
     var usersMentioned = [];
     for (var i = 1; i < msg.mentions.users.array().length; i++)  {
       usersMentioned.push(" and " + msg.mentions.users.array()[i]);
     }
     msg.channel.send(`*${msg.member} pokes ${msg.mentions.users.first()}!*` + usersMentioned);
-  } else {
+  } else {*/ //remember to uncomment the bracket when this is uncommented
     msg.channel.send(`*pokes ${msg.member} back*`);
-  }
-  break;*/
+  //}
+  break;
 
   case 'gutentag':
   case 'hola':
