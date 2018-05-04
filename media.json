@@ -32,7 +32,8 @@
 		"*Why...*",
 		"*dying sounds*",
 		"Was it worth it...? :(",
-		"Argh! I thought we were friends!"
+		"Argh! I thought we were friends!",
+		"Self destructing in\n3...\n2.."
 	],
 
 	"exitfails": [
@@ -49,7 +50,8 @@
 		"Press '1' to try again.",
 		"You'll need to try harder than that.",
 		"Checking power level... *error: not over 9000.*",
-		"Try again?"
+		"Try again?",
+		"Not with that attitude"
 	],
 
 	"failRoleLow":	[
@@ -58,13 +60,16 @@
 		"You and what army, badger?",
 		"Is that a toy sword?",
 		"How cute.",
-		"Did you know that a group of badgers is called a clan? You'll probably need one first."
+		"Did you know that a group of badgers is called a clan? You'll probably need one first.",
+		"What is that? A sword for ants?"
 	],
 
 	"failRoleFool":	[
 		"You think you can kill me, but you are merely a fool.",
 		"There is a reason they made you a fool.",
-		"You may be the king's jester, but you'll *never* outwit me!"
+		"You may be the king's jester, but you'll *never* outwit me!",
+		"You can't fool me, cause I'm a moron!",
+		"How foolish!"
 	],
 
 	"greetings":	[
@@ -78,6 +83,7 @@
 		"Greetings, ",
 		"*waves at* ",
 		"*wags tail at* ",
-		"*barks at* "
+		"*barks at* ",
+		"안녕하세요, "
 	]
 }
