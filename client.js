@@ -12,7 +12,7 @@ client.on('ready', () => { //prints to console when logged in and sets playing s
 
   fs.readFile('./config.json', (err, data) => {
     if (!err) {
-      console.log(data.toString())
+      console.log("\n" + data.toString())
     } else {
       console.error(err)
     }

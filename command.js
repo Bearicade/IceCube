@@ -1,4 +1,5 @@
 var media = require("./media.json");
+var profiles = require('./userdata/profiles.json');
 const config = require("./config.json");
 
 module.exports = function ()  {
@@ -63,7 +64,13 @@ module.exports = function ()  {
       } break;
 
       case 'about':   //will fetch about from user file
-      msg.channel.send("*command in development...*");
+      let links = [];
+      for (let i = 0; i < profiles[msg.member.id].channels.length; i++) {
+        links.push("\n" + profiles[msg.member.id].channels[i]);
+      }
+
+      msg.channel.send("**Alias**: " + profiles[msg.member.id].alias +
+      "\n**Channel(s)**: " + links + "\n**About**: " + profiles[msg.member.id].about);
       break;
 
       case 'intro':   //will write intro into user file

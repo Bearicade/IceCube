@@ -2,10 +2,24 @@
   "188472584038383627": {
     "alias": "Venn",
     "channels": [
-      "http://facebook.com/venarctos (art)",
-      "http://twitter.com/venarctos (art)",
-      "http://twitch.tv/venarctos (stream)"
+      "<http://facebook.com/venarctos> (art)",
+      "<http://twitter.com/venarctos> (art)",
+      "<http://twitch.tv/venarctos> (stream)"
     ],
     "about": "weeb"
+  },
+  "188477669220810754": {
+    "alias": "Mystro",
+    "channels": [
+      "<https://www.instagram.com/justmystro/>"
+    ],
+    "about": "refer to \\@Ven"
+  },
+  "127889554765119488": {
+    "alias": "Dandy",
+    "channels": [
+      "I have none cause I'm a scrub"
+    ],
+    "about": "\\@Ven for testing purposes"
   }
 }
