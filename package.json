@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Badgers of Camelot Discord Bot",
   "main": "client.js",
-  "author": "DigiVenn & Alattice",
+  "author": "Green & Alattice",
   "dependencies": {
     "discord.js": "^11.3.2",
     "opusscript": "0.0.6",

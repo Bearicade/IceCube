@@ -1,7 +1,7 @@
 {
   "prefix": "$",
-  "server": "BoC; Development Server",
-  "channel": ["bot-prompt"],
-  "initRole": ["440584224559333385", "Alpha Testers"],
-  "adminRole": ["440583376655613952", "Developers"]
+  "server": "Badgers of Camelot",
+  "channel": ["chatroom"],
+  "initRole": ["356642139997863946", "Badgers"],
+  "adminRole": ["356160238195441664", "Keepers"]
 }
