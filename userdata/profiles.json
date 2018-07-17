@@ -1,10 +1,9 @@
 {
-  "188472584038383627": {
-    "alias": "Venn",
+  "457190135423959043": {
+    "alias": "Green/Boowulf",
     "channels": [
-      "<http://facebook.com/venarctos> (art)",
-      "<http://twitter.com/venarctos> (art)",
-      "<http://twitch.tv/venarctos> (stream)"
+      "<http://twitter.com/boowulf> (art)",
+      "<http://twitter.com/boowulf> (art)"
     ],
     "about": "weeb"
   },
@@ -27,6 +26,13 @@
     "channels": [
       "I love glass"
     ],
-    "about": "\\@Ven for testing purposes"
+    "about": "a nerd"
+  },
+  "189539397329223682": {
+    "alias": "Karmik",
+    "channels": [
+      "I have no channel right now, maybe I'll stream games sometime and then edit this if I remember!"
+    ],
+    "about": "Interesting fact...hmmm I have 2 kids and I mostly lurk here to see the awesome art *nods*"
   }
 }

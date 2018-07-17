@@ -63,6 +63,7 @@ module.exports = function () {
                         msg.channel.send("`rolled " + Math.ceil(Math.random() * args[0]) + "`");
                     } break;
 
+                case 'intro':
                 case 'about':   //will fetch about from user file
                     let links = [];
                     if ((args[0]===undefined)) {//if no user is provided after about command, the caller about is called
@@ -76,7 +77,7 @@ module.exports = function () {
                     } else {// if a user id is included after about command, the about of the user will be called
 
                         //console.log(msg.mentions.users.first().id);
-                       
+
                         for (let i = 0; i < profiles[msg.mentions.users.first().id].channels.length; i++) {
                             links.push("\n" + profiles[msg.mentions.users.first().id].channels[i]);
                         }
@@ -86,7 +87,7 @@ module.exports = function () {
                     }
                     break;
 
-                case 'intro':   //will write intro into user file
+                case 'write':   //will write intro into user file
                     msg.channel.send("*command in development...*");
                     break;
 
