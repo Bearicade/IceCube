@@ -20,7 +20,8 @@ module.exports = function () {
 
                 case 'destroy': //Destroy the bot, but not really
                 case 'kill':  //Disconnecting the client
-                    if (msg.member._roles.includes(config.adminRole[0])) {
+				case 'die':
+                    if ((msg.member._roles.includes(config.adminRole[0]))||(msg.member._roles.includes(config.modRole))) {
                         msg.channel.send(media.exits[
                           (Math.round(Math.random() * (media.exits.length - 1)))
                         ]);
@@ -62,6 +63,16 @@ module.exports = function () {
                     } else {
                         msg.channel.send("`rolled " + Math.ceil(Math.random() * args[0]) + "`");
                     } break;
+				
+				case 'timer':  
+                    //if (isNaN(parseInt(args[0]))) {
+                        //msg.channel.send("Invalid entry. Please enter number after " + prefix + "timer.");
+                    //} else {
+                        msg.channel.send("`Timer set for " + msg.mentions.users.first().id + ": " + parseInt(args[0])+" mins`");
+						//check the user only has one timer set up
+						msg.channel.send("Just kidding, command in development");
+                    //} 
+					break;
 
                 case 'intro':
                 case 'about':   //will fetch about from user file
