@@ -7,14 +7,31 @@
 		"Did you know the first French fries weren't actually cooked in France? They were cooked in Greece.",
 		"If you see a robbery at an Apple Store does that make you an iWitness?",
 		"A ham sandwich walks into a bar and orders a beer. The bartender says, \"Sorry we don't serve food here.\"",
-		"Why did the hipster burn their tongue on their coffee? Because they drank it before it was cool!",
+		"Why did the hipster burn his tongue on his coffee? Because he drank it before it was cool!",
 		"Did you hear about the guy who fell into an upholstery factory? He's fully recovered now.",
 		"What do you call a belt made out of watches? A waist of time!",
 		"Why did the picture go to jail? Because they were framed!",
 		"Why is Peter Pan always flying? He neverlands!",
 		"Two satellites decided to get married. The wedding wasn't much, but the reception was incredible!",
 		"What did the astronaut's fiancée say when he proposed in open space? I can't breathe!",
-		"What did the janitor say when he jumped out of the closet? Supplies!"
+		"What did the janitor say when he jumped out of the closet? Supplies!",
+		"Two polar bears are sitting in a bathtub. The first one says, \"Pass the soap.\" The second one says, \"No soap, radio!\"",
+		"How do you make a Kleenex dance? Put a little boogie in it!",
+		"How do you make holy water? You boil the hell out of it." ,
+		"What do you call a guy who never farts in public? A Private Tutor!",
+		"Why are ghosts banned from the liquor store? Because they would steal all the boos!",
+		"What did one wall say to the other? Meet you at the corner!",
+		"What did the ghost say to the bee? Boo bee!",
+		"What's the difference between a piano and a fish? You can tune a piano but you can’t tuna fish!",
+		"My grandad has the heart of a lion... And a lifetime ban from the zoo. ",
+		"Why did the golfer change his pants? \nBecause he got a hole in one!",
+		"Why didn't the terminator upgrade to windows 10? I asked him and he said, 'I still love vista, baby!'",
+		"If you were to clean a vacuum, would you be a vacuum cleaner? ",
+		"When does a joke become a dad joke? \nWhen it becomes apparent!",
+		"Where does Frosty keep his cash? In the snow banks!",
+		"What do you call a fake noodle? \r\n An impasta!",
+		"And Jesus said, 'Come forth and receive everlasting life.' \r\nBut John came fifth, and only received a toaster oven."
+	
 	],
 
 	"exits": [
@@ -33,7 +50,8 @@
 		"*dying sounds*",
 		"Was it worth it...? :(",
 		"Argh! I thought we were friends!",
-		"Self destructing in\n3...\n2.."
+		"Self destructing in\n3...\n2..",
+		"Violent beginnings lead to violent ends..."
 	],
 
 	"exitfails": [
@@ -51,7 +69,8 @@
 		"You'll need to try harder than that.",
 		"Checking power level... *error: not over 9000.*",
 		"Try again?",
-		"Not with that attitude"
+		"Not with that attitude",
+		"C-C-C-COMBO BREAKER!"
 	],
 
 	"failRoleLow":	[
