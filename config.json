@@ -3,6 +3,7 @@
   "server": "Badgers of Camelot",
   "channel": ["chatroom"],
   "initRole": ["356642139997863946", "Badgers"],
+  "modRole": ["356161388760006656", "Iron Tusks"],
   "devRole": ["450433073021190155", "Nightwings"],
   "adminRole": ["356160238195441664", "Keepers"]
 }

@@ -24,14 +24,20 @@
 		"What did the ghost say to the bee? Boo bee!",
 		"What's the difference between a piano and a fish? You can tune a piano but you can’t tuna fish!",
 		"My grandad has the heart of a lion... And a lifetime ban from the zoo. ",
-		"Why did the golfer change his pants? \nBecause he got a hole in one!",
+		"Why did the golfer change his pants?\nBecause he got a hole in one!",
 		"Why didn't the terminator upgrade to windows 10? I asked him and he said, 'I still love vista, baby!'",
 		"If you were to clean a vacuum, would you be a vacuum cleaner? ",
-		"When does a joke become a dad joke? \nWhen it becomes apparent!",
+		"When does a joke become a dad joke?\nWhen it becomes apparent!",
 		"Where does Frosty keep his cash? In the snow banks!",
-		"What do you call a fake noodle? \r\n An impasta!",
+		"What do you call a fake noodle?\nAn impasta!",
 		"And Jesus said, 'Come forth and receive everlasting life.' \r\nBut John came fifth, and only received a toaster oven."
-	
+
+	],
+
+	"activities": [
+		"the ukelele!",
+		"too many games!",
+		"around!"
 	],
 
 	"exits": [
@@ -83,12 +89,12 @@
 		"What is that? A sword for ants?"
 	],
 
-	"failRoleFool":	[
-		"You think you can kill me, but you are merely a fool.",
-		"There is a reason they made you a fool.",
+	"failRoleMod":	[
+		"You think you can kill me, but you are not nearly powerful enough.",
+		"There is a reason they made you out to be a fool.",
 		"You may be the king's jester, but you'll *never* outwit me!",
-		"You can't fool me, because I'm a moron!",
-		"How foolish!"
+		"You forget that I, too, am tusked with iron.",
+		"How foolish! What knight are you!"
 	],
 
 	"greetings":	[

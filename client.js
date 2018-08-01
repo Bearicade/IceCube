@@ -2,13 +2,14 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const auth = require('./auth.json'); //fetching and saving token
 const config = require('./config.json'); //fetching config information
+const media = require('./media.json'); //fetching media
 const fs = require('fs');
 
 require('./command.js')();
 
 client.on('ready', () => { //prints to console when logged in and sets playing status
   console.log(`Logged in as ${client.user.tag}`);
-  client.user.setActivity(`I am your bot!`);
+  client.user.setActivity(randomFrom(media.activities)); //random activity from media.json
 
   fs.readFile('./config.json', (err, data) => {
     if (!err) {
