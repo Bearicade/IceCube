@@ -65,13 +65,13 @@ module.exports = function () {
     } break;
 
     case 'timer':
-    //if (isNaN(parseInt(args[0]))) {
+    if (isNaN(parseInt(args[0]))) {
     msg.channel.send("Invalid entry. Please enter number after " + prefix + "timer.");
-    //} else {
+    } else {
     msg.channel.send("`Timer set for " + profiles[msg.member.id].alias + ": " + args[0]/*parseInt(args[0])*/+" mins`");
-    //check the user only has one timer set up
+    //check the user only has one timer set up; and ring only when theyre online
     msg.channel.send("Just kidding, command in development");
-    //}
+    }
     break;
 
     case 'intro':
