@@ -66,9 +66,9 @@ module.exports = function () {
 
     case 'timer':
     //if (isNaN(parseInt(args[0]))) {
-    //msg.channel.send("Invalid entry. Please enter number after " + prefix + "timer.");
+    msg.channel.send("Invalid entry. Please enter number after " + prefix + "timer.");
     //} else {
-    msg.channel.send("`Timer set for " + msg.mentions.users.first().id + ": " + parseInt(args[0])+" mins`");
+    msg.channel.send("`Timer set for " + profiles[msg.member.id].alias + ": " + args[0]/*parseInt(args[0])*/+" mins`");
     //check the user only has one timer set up
     msg.channel.send("Just kidding, command in development");
     //}
