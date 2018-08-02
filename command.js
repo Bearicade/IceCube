@@ -55,13 +55,26 @@ module.exports = function () {
         } break;
 
         case 'timer':
-        if (isNaN(parseInt(args[0]))) {
-          msg.channel.send("Invalid entry. Please enter number after " + prefix + "timer.");
-        } else {
-          msg.channel.send("`Timer set for " + profiles[msg.member.id].alias + ": " + args[0]/*parseInt(args[0])*/+" mins`");
-          //check the user only has one timer set up; and ring only when theyre online
-          msg.channel.send("Just kidding, command in development");
-        }
+        if (args[0]=="active"){
+		if(timecount==0){
+			msg.channel.send("There are no active timers");
+		}else{
+			for(var a=0;a<timecount;a++){
+				msg.channel.send(timelist[a][0] +": "+timelist[a][1]);
+			}
+		}
+	} else if (isNaN(parseInt(args[0]))) {
+    msg.channel.send("Invalid entry. Please enter number after " + prefix + "timer.");
+    } else {
+    msg.channel.send("`Timer set for " + profiles[msg.member.id].alias + ": " + args[0]/*parseInt(args[0])*/+" mins`");
+    //timelist[timecount][0] = profiles[msg.member.id].alias;
+	//timelist[timecount][1] = args[0];
+	//console.log(timelist[0][0]);
+	//console.log(timelist[0][1]);
+	//timecount++;
+	//check the user only has one timer set up; and ring only when theyre online
+    msg.channel.send("Just kidding, command in development");
+    }
         break;
 
         case 'intro':
