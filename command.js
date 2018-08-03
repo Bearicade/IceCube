@@ -64,7 +64,7 @@ module.exports = function () {
         case 'points':
         case 'pts':
         case 'coins':
-          getPoints(msg);
+          printPoints(msg);
         break;
 
         case 'timer':

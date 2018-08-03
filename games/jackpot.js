@@ -61,7 +61,7 @@ playJackpot = function(msg, args){
 	});
 }
 
-getPoints = function(msg)	{
+printPoints = function(msg)	{
 	let bank;
 	fs.readFile("./userdata/" + msg.member.id + ".txt", 'utf8', function(err, data) {
 		if (err) {
