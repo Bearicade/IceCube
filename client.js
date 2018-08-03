@@ -33,7 +33,7 @@ client.on('guildMemberAdd', member => {
   .catch(console.error)*/;
 
   //Create a file for the user
-  fs.appendFile('./userdata/' + member.user.id, "", (err) => {
+  fs.mkdir('./userdata/' + member.user.id + '/', (err) => {
     if (!err) return; //if callback does not return error, continue
     console.error(err); //print to console if error occurs
   });
@@ -46,10 +46,10 @@ client.on('guildMemberAdd', member => {
 //removes user file when they leave server
 client.on('guildMemberRemove', member => {
   console.log(`\n${member.user.username} has left the server.`);
-  fs.unlink('./userdata/' + member.user.id, (err) => {
+  fs.rmdir('./userdata/' + member.user.id + '/', (err) => {
     if (!err) return; //if callback does not return error, continue
     if (err.code === 'ENOENT') {
-      console.error('Failure attempt removing file. ' + member.user.username + '\'s data does not exist.');
+      console.error('Failure attempt removing directory. ' + member.user.username + '\'s data does not exist.');
       return; //print to console if file does not exists in case of 'ENOENT' error
     } else {
       console.error(err);
