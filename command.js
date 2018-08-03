@@ -1,6 +1,7 @@
 var media = require("./media.json");
 var profiles = require('./userdata/profiles.json');
 const config = require("./config.json");
+var game1 = require("./games/jackpot.js")
 
 module.exports = function () {
   runCommand = function (prefix, client, msg, cmd, args) {
@@ -53,7 +54,10 @@ module.exports = function () {
         } else {
           msg.channel.send("`rolled " + Math.ceil(Math.random() * args[0]) + "`");
         } break;
-
+		
+		case 'spin':
+			playJackpot(msg, cmd, args);
+		break;
         case 'timer':
         if (args[0]=="active"){
 		if(timecount==0){
