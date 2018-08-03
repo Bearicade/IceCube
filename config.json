@@ -1,5 +1,6 @@
 {
   "prefix": "$",
+  "currency": " Badger Coins",
   "server": "Badgers of Camelot",
   "channel": ["chatroom"],
   "initRole": ["356642139997863946", "Badgers"],

@@ -34,17 +34,17 @@ playJackpot = function(msg, args){
 			let num3 = Math.ceil(Math.random() * 3);
 			msg.channel.send(`${msg.member} spun a [ `+num1+" ][ "+num2+" ][ "+num3+" ] ");
 			if(num1==num2 && num2==num3){
-				msg.channel.send("You win "+bet*10+" badger coins!");
+				msg.channel.send("You win "+bet*10+config.currency);
 				bet= bet*10;
 			}else{
-				msg.channel.send("You lost "+bet+" badger coins!");
+				msg.channel.send("You lost "+bet+config.currency);
 				bet= -bet;
 			}
 
 			bank = bank + bet;
 			//console.log("bank:"+bank);
 			//console.log("bet:"+bet);
-			msg.channel.send("You have "+bank+" badger coins now.");
+			msg.channel.send("You have "+bank+config.currency+" now.");
 
 
 
@@ -71,10 +71,10 @@ printPoints = function(msg)	{
 				if (!err) return; //if callback does not return error, continue
 				console.error(err); //print to console if error occurs
 			});
-			console.log(`${msg.author.username} now has a bank of ` + bank + " badger coins.");
+			console.log(`${msg.author.username} now has a bank of ` + bank + config.currency);
 		} else {
 			bank = parseInt(data);
 		}
-		msg.channel.send("You have "+ bank +" badger coins.");
+		msg.channel.send("You have "+ bank +config.currency);
 	});
 };

@@ -67,6 +67,10 @@ module.exports = function () {
           printPoints(msg);
         break;
 
+        case 'give': //format >give @user [#]
+          msg.channel.send("Command in development");
+        break;
+
         case 'timer':
         if (args[0]=="active"){
           if(timecount==0){
