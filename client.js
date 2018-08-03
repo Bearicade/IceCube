@@ -49,7 +49,7 @@ client.on('guildMemberRemove', member => {
   fs.unlink('./userdata/' + member.user.id, (err) => {
     if (!err) return; //if callback does not return error, continue
     if (err.code === 'ENOENT') {
-      console.error('Failure attempt removing file.' + member.user.username + '\'s data does not exist.');
+      console.error('Failure attempt removing file. ' + member.user.username + '\'s data does not exist.');
       return; //print to console if file does not exists in case of 'ENOENT' error
     } else {
       console.error(err);
