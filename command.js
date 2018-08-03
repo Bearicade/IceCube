@@ -17,7 +17,8 @@ module.exports = function () {
         "- marco: Polo!\n" +
         "- hello: Say hi to me!\n" +
         "- roll [#]: I'll roll a random number within your specified parameter.\n" +
-        "- joke: Joke? What joke?\n" + "```");
+        "- joke: Joke? What joke?\n" + 
+		"- jackpot [bet]: Gambling is fun, why don't you bet on it?"+"```");
         break;
 
         case 'destroy': //Destroy the bot, but not really
