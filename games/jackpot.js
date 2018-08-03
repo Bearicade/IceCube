@@ -10,7 +10,7 @@ playJackpot = function(msg, args){
 	the bot's current life. we will use 'let' if we only need the variable
 	for the duration of one command*/
 	let bank;
-	let gamefile = fs.open("./userdata/"+msg.member.id+".txt", 'a', (err, fd) => {
+	let gamefile = fs.open("./userdata/"+msg.member.id+"/points.txt", 'a', (err, fd) => {
 		if (err) {
 			if (err.code === 'ENOENT') {
 				console.error('file does not exist');
@@ -18,7 +18,7 @@ playJackpot = function(msg, args){
 			}
 			throw err;
 		}
-		fs.readFile("./userdata/"+msg.member.id+".txt", 'utf8', function(err, data) {
+		fs.readFile("./userdata/"+msg.member.id+"/points.txt", 'utf8', function(err, data) {
 			if (err) throw err;
 			//console.log("dat:"+data);
 			if (isNaN(parseInt(data))){
@@ -49,7 +49,7 @@ playJackpot = function(msg, args){
 
 
 
-			fs.truncate("./userdata/"+msg.member.id+".txt", 0, function() {
+			fs.truncate("./userdata/"+msg.member.id+"/points.txt", 0, function() {
 				fs.writeFile(fd, bank+"\r\n", 'utf8', (err) => {
 					fs.close(fd, (err) => {
 						if (err) throw err;
@@ -64,11 +64,11 @@ playJackpot = function(msg, args){
 
 printPoints = function(msg)	{
 	let bank;
-	fs.readFile("./userdata/" + msg.member.id + ".txt", 'utf8', function(err, data) {
+	fs.readFile("./userdata/" + msg.member.id + "/points.txt", 'utf8', function(err, data) {
 		if (err) {
 			console.log(`\n${msg.author.username} does not have a bank yet.`);
 			bank = 100;
-			fs.appendFile('./userdata/' + msg.author.id + '.txt', bank + "\r\n", (err) => {
+			fs.appendFile('./userdata/' + msg.member.id + '/points.txt', bank + "\r\n", (err) => {
 				if (!err) return; //if callback does not return error, continue
 				console.error(err); //print to console if error occurs
 			});
@@ -79,3 +79,16 @@ printPoints = function(msg)	{
 		msg.channel.send("You have "+ bank +config.currency);
 	});
 };
+
+checkDirAdd = function(msg)	{
+	if (!fs.existsSync('./userdata/' + msg.member.id + '/'))	{
+		console.log(`\n${msg.author.username} doesn't have a directory!`);
+		fs.mkdir('./userdata/' + msg.member.id + '/', (err) => {
+			if (!err) return; //if callback does not return error, continue
+			console.error(err); //print to console if error occurs
+		});
+		console.log("Directory has been made.");
+	} else {
+		console.log(`\n${msg.author.username}\'s directory exists!`);
+	}
+}
