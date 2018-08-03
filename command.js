@@ -55,7 +55,7 @@ module.exports = function () {
           msg.channel.send("`rolled " + Math.ceil(Math.random() * args[0]) + "`");
         } break;
 		
-		case 'spin':
+		case 'jackpot':
 			playJackpot(msg, cmd, args);
 		break;
         case 'timer':
