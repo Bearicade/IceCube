@@ -10,7 +10,7 @@ playJackpot = function(msg, args){
 	the bot's current life. we will use 'let' if we only need the variable
 	for the duration of one command*/
 	let bank;
-	let gamefile = fs.open("./userdata/"+msg.member.id+"/points.txt", (err, fd) => {
+	let gamefile = fs.open("./userdata/"+msg.member.id+"/points.txt", 'a', (err, fd) => {
 		if (err) {
 			if (err.code === 'ENOENT') {
 				console.error('file does not exist');
@@ -79,3 +79,16 @@ printPoints = function(msg)	{
 		msg.channel.send("You have "+ bank +config.currency);
 	});
 };
+
+checkDirAdd = function(msg)	{
+	if (!fs.existsSync('./userdata/' + msg.member.id + '/'))	{
+		console.log(`\n${msg.author.username} doesn't have a directory!`);
+		fs.mkdir('./userdata/' + msg.member.id + '/', (err) => {
+			if (!err) return; //if callback does not return error, continue
+			console.error(err); //print to console if error occurs
+		});
+		console.log("Directory has been made.");
+	} else {
+		console.log(`\n${msg.author.username}\'s directory exists!`);
+	}
+}

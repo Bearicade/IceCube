@@ -61,12 +61,14 @@ module.exports = function () {
           msg.channel.send("Uh, what?")
           return;
         }
+        checkDirAdd(msg);
         playJackpot(msg, args);
         break;
 
         case 'points':
         case 'pts':
         case 'coins':
+          checkDirAdd(msg);
           printPoints(msg);
         break;
 
