@@ -1,4 +1,5 @@
 const fs = require("fs");
+const config = require("../config.json");
 
 //msg.member.id
 
