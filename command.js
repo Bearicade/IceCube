@@ -1,7 +1,7 @@
 var media = require("./media.json");
 var profiles = require('./userdata/profiles.json');
 const config = require("./config.json");
-var game1 = require("./games/jackpot.js")
+var gameJackpot = require("./games/jackpot.js")
 
 module.exports = function () {
   runCommand = function (prefix, client, msg, cmd, args) {
@@ -17,8 +17,8 @@ module.exports = function () {
         "- marco: Polo!\n" +
         "- hello: Say hi to me!\n" +
         "- roll [#]: I'll roll a random number within your specified parameter.\n" +
-        "- joke: Joke? What joke?\n" + 
-		"- jackpot [bet]: Gambling is fun, why don't you bet on it?"+"```");
+        "- joke: Joke? What joke?\n" +
+        "- jackpot [bet]: Gambling is fun, why don't you bet on it?"+"```");
         break;
 
         case 'destroy': //Destroy the bot, but not really
@@ -55,31 +55,38 @@ module.exports = function () {
         } else {
           msg.channel.send("`rolled " + Math.ceil(Math.random() * args[0]) + "`");
         } break;
-		
-		case 'jackpot':
-			playJackpot(msg, cmd, args);
-		break;
+
+        case 'jackpot':
+        playJackpot(msg, args);
+        break;
+
+        case 'points':
+        case 'pts':
+        case 'coins':
+          getPoints(msg);
+        break;
+
         case 'timer':
         if (args[0]=="active"){
-		if(timecount==0){
-			msg.channel.send("There are no active timers");
-		}else{
-			for(var a=0;a<timecount;a++){
-				msg.channel.send(timelist[a][0] +": "+timelist[a][1]);
-			}
-		}
-	} else if (isNaN(parseInt(args[0]))) {
-    msg.channel.send("Invalid entry. Please enter number after " + prefix + "timer.");
-    } else {
-    msg.channel.send("`Timer set for " + profiles[msg.member.id].alias + ": " + args[0]/*parseInt(args[0])*/+" mins`");
-    //timelist[timecount][0] = profiles[msg.member.id].alias;
-	//timelist[timecount][1] = args[0];
-	//console.log(timelist[0][0]);
-	//console.log(timelist[0][1]);
-	//timecount++;
-	//check the user only has one timer set up; and ring only when theyre online
-    msg.channel.send("Just kidding, command in development");
-    }
+          if(timecount==0){
+            msg.channel.send("There are no active timers");
+          }else{
+            for(var a=0;a<timecount;a++){
+              msg.channel.send(timelist[a][0] +": "+timelist[a][1]);
+            }
+          }
+        } else if (isNaN(parseInt(args[0]))) {
+          msg.channel.send("Invalid entry. Please enter number after " + prefix + "timer.");
+        } else {
+          msg.channel.send("`Timer set for " + profiles[msg.member.id].alias + ": " + args[0]/*parseInt(args[0])*/+" mins`");
+          //timelist[timecount][0] = profiles[msg.member.id].alias;
+          //timelist[timecount][1] = args[0];
+          //console.log(timelist[0][0]);
+          //console.log(timelist[0][1]);
+          //timecount++;
+          //check the user only has one timer set up; and ring only when theyre online
+          msg.channel.send("Just kidding, command in development");
+        }
         break;
 
         case 'intro':

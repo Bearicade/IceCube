@@ -2,7 +2,7 @@ const fs = require("fs");
 
 //msg.member.id
 
-playJackpot = function(msg, cmd, args){
+playJackpot = function(msg, args){
 	console.log('Jackpot!');
 	let bet = parseInt(args[0]);
 	/*we will try to use 'var' if we need the variable for the duration of
@@ -60,3 +60,21 @@ playJackpot = function(msg, cmd, args){
 		});
 	});
 }
+
+getPoints = function(msg)	{
+	let bank;
+	fs.readFile("./userdata/" + msg.member.id + ".txt", 'utf8', function(err, data) {
+		if (err) {
+			console.log(`\n${msg.author.username} does not have a bank yet.`);
+			bank = 100;
+			fs.appendFile('./userdata/' + msg.author.id + '.txt', bank + "\r\n", (err) => {
+				if (!err) return; //if callback does not return error, continue
+				console.error(err); //print to console if error occurs
+			});
+			console.log(`${msg.author.username} now has a bank of ` + bank + " badger coins.");
+		} else {
+			bank = parseInt(data);
+		}
+		msg.channel.send("You have "+ bank +" badger coins.");
+	});
+};
