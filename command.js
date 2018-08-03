@@ -57,6 +57,7 @@ module.exports = function () {
         } break;
 
         case 'jackpot':
+        if (args <= 0) msg.channel.send("Uh, what?"); return;
         playJackpot(msg, args);
         break;
 
