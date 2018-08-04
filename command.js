@@ -57,12 +57,13 @@ module.exports = function () {
         } break;
 
         case 'jackpot':
-        if (args <= 0) {
+        if (isNaN(parseInt(args[0]))) {
           msg.channel.send("Uh, what?")
           return;
-        }
-        checkDirAdd(msg);
-        playJackpot(msg, args);
+        }else{
+			checkDirAdd(msg);
+			playJackpot(msg, args);
+		}
         break;
 
         case 'points':

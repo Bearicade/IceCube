@@ -5,6 +5,14 @@ const config = require("../config.json");
 
 playJackpot = function(msg, args){
 	console.log('Jackpot!');
+	
+	if(isNaN(parseInt(args[0]))||args[0]==0){
+		msg.channel.send("No bets placed");
+		let bet = 0;
+	}else if (args[0]<0){
+		msg.channel.send("Trying to cheat the dealer?");
+		return;
+	}
 	let bet = parseInt(args[0]);
 	/*we will try to use 'var' if we need the variable for the duration of
 	the bot's current life. we will use 'let' if we only need the variable
