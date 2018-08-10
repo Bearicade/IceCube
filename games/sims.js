@@ -1,7 +1,7 @@
 const fs = require("fs");
 const config = require("../config.json");
 
-sim1 = function(msg, args){
+playSim1 = function(msg, args){
 	
 	
 	switch(args[1]){
