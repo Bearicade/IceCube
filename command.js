@@ -2,7 +2,7 @@ var media = require("./media.json");
 var profiles = require('./userdata/profiles.json');
 const config = require("./config.json");
 var gameJackpot = require("./games/jackpot.js");
-//var gameSim = require("./games/sims.js");
+var gameSim = require("./games/sims.js");
 
 module.exports = function () {
   runCommand = function (prefix, client, msg, cmd, args) {
@@ -164,8 +164,8 @@ module.exports = function () {
         break;
 		
 		case 'sim':
-		msg.channel.send("...");
-		//playSim1(msg,args);
+		//msg.channel.send("...");
+		playSim1(msg,args);
 		break;
 
         default:  //default reply, unrecognized command
