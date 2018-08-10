@@ -5,10 +5,9 @@ playSim1 = function(msg, args){
 	let index = 0;
 	
 	switch(args[index]){
-		index++;
 		case 'check':
+			index++;
 			switch(args[index]){
-				index++;
 				case 'status':
 				
 				break;
@@ -32,8 +31,9 @@ playSim1 = function(msg, args){
 			}
 		break;
 		case 'find':
+			index++;
 			switch(args[index]){
-				index++;
+				
 				case 'a':
 				case 'job':
 				
@@ -42,20 +42,24 @@ playSim1 = function(msg, args){
 				case 'money':
 				case 'coins':
 				case 'coin':
+					index++;
 					switch(args[index]){
-						index++;
+						
 						case 'on':
 						case 'in':
+						index++;
 						switch(args[index]){
-							index++;
+							
 							case 'ground':
 							case 'floor':
+							index++;
 							
 							break;
 							case 'pool':
 							case 'beach':
 							case 'water':
 							case 'pond':
+							index++;
 							
 							break;
 						}
@@ -66,36 +70,45 @@ playSim1 = function(msg, args){
 				case 'loot':
 				case 'items':
 				case 'item':
+					index++;
 					switch(args[index]){
-						index++;
+						
 						case 'on':
 						case 'in':
+						index++;
 						switch(args[index]){
-							index++;
+							
 							case 'ground':
 							case 'floor':
+							index++;
 							
 							break;
 							case 'pool':
 							case 'beach':
 							case 'water':
 							case 'pond':
+							index++;
 							
 							break;
 							case 'strangers':
 							case 'stranger\'s':
+								index++;
 								switch(args[index]){
-									index++;
+									
 									case 'pocket':
+									index++;
 										msg.channel.send("Is that a quarter or are they happy to see you?");
 									break;
 									case 'backpack':
+									index++;
 										msg.channel.send("You got a waterbottle");
 									break;
 									case 'purse':
+									index++;
 										msg.channel.send("You got slapped");
 									break;
 									case 'wallet':
+										index++;
 										msg.channel.send("You found a driver\' license!");
 									break;
 								}
@@ -107,8 +120,8 @@ playSim1 = function(msg, args){
 			}
 		break;
 		case 'use':
+			index++;
 			switch(args[index]){
-				index++;
 				case 'cash':
 				case 'money':
 				case 'coins':
