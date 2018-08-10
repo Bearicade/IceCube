@@ -109,7 +109,7 @@ playSim1 = function(msg, args){
 									break;
 									case 'wallet':
 										index++;
-										msg.channel.send("You found a driver\' license!");
+										msg.channel.send("You found a driver\'s license!");
 									break;
 								}
 							break;

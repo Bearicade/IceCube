@@ -1,0 +1,22 @@
+{
+	"nouns": [
+		"person":[
+			"stranger\'s",
+			"friend\'s",
+			"enemy\'s"
+		],
+		"place":[
+		
+		],
+		"object":[
+			"wallet",
+		],
+		"container":[
+		
+		]
+	],
+	
+	"adj":[
+		
+	]
+}
