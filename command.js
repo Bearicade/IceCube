@@ -62,29 +62,29 @@ module.exports = function () {
           msg.channel.send("Uh, what?")
           return;
         }else{
-			checkDirAdd(msg);
-			playJackpot(msg, args);
-		}
+          checkDirAdd(msg);
+          playJackpot(msg, args);
+        }
         break;
 
         case 'points':
         case 'pts':
         case 'coins':
-          checkDirAdd(msg);
-          printPoints(msg);
+        checkDirAdd(msg);
+        printPoints(msg);
         break;
 
         case 'give': //format >give @user [#]
-          msg.channel.send("Command in development");
+        msg.channel.send("Command in development");
         break;
 
         case 'timer':
         if (args[0]=="active"){
-          if(timecount==0){
+          if (timecount==0) {
             msg.channel.send("There are no active timers");
-          }else{
-            for(var a=0;a<timecount;a++){
-              msg.channel.send(timelist[a][0] +": "+timelist[a][1]);
+          } else {
+            for (var a = 0; a<timecount; a++) {
+              msg.channel.send(timelist[a][0] + ": " + timelist[a][1]);
             }
           }
         } else if (isNaN(parseInt(args[0]))) {
@@ -104,7 +104,7 @@ module.exports = function () {
         case 'intro':
         case 'about':   //will fetch about from user file
         let links = [];
-        if ((args[0]===undefined)) {//if no user is provided after about command, the caller about is called
+        if ((args[0] === undefined)) {//if no user is provided after about command, the caller about is called
 
           for (let i = 0; i < profiles[msg.member.id].channels.length; i++) {
             links.push("\n" + profiles[msg.member.id].channels[i]);
@@ -162,11 +162,11 @@ module.exports = function () {
         case 'boneless':
         msg.channel.send("**B O N E L E S S**");
         break;
-		
-		case 'sim':
-		//msg.channel.send("...");
-		playSim1(msg,args);
-		break;
+
+        case 'sim':
+        //msg.channel.send("...");
+        playSim1(msg, args);
+        break;
 
         default:  //default reply, unrecognized command
         msg.channel.send("Sorry, I don't know that command. " +
@@ -182,7 +182,7 @@ module.exports = function () {
     if (err.code === undefined) {
       msg.channel.send("Error: No entry found");
     } else {
-      msg.channel.send("Error: unhandled exception " + err.code);
+      msg.channel.send("Error: Unhandled Exception " + err.code);
     }
   }
 
