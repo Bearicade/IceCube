@@ -138,14 +138,18 @@ module.exports = function () {
         msg.channel.send("Polo!");
         break;
 
+        case 'owo':
+        msg.channel.send(randomFrom(media.owo));
+        break;
+
         case 'pokes': //don't feel good about this command because it mentions people
         case 'poke':
         if (msg.mentions.users.first() && !msg.isMentioned(client.user)) {
-          /*var usersMentioned = [];
+          var usersMentioned = [];
           for (var i = 1; i < msg.mentions.users.array().length; i++)  {
-          usersMentioned.push(" and " + msg.mentions.users.array()[i]);
-          //}*/
-          msg.channel.send("I won't poke them, because the admin told me not to!") //*`*${msg.member} pokes ${msg.mentions.users.first()}!*` + usersMentioned);
+            usersMentioned.push(" and " + msg.mentions.users.array()[i]);
+          }
+          msg.channel.send(`*${msg.member} pokes ${msg.mentions.users.first()}` + usersMentioned + `*`);
         } else {
           msg.channel.send(`*pokes ${msg.member} back*`);
         } break;

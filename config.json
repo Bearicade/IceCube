@@ -1,10 +1,10 @@
 {
   "prefix": "$",
-  "currency": " Badger Coins",
-  "server": "Badgers of Camelot",
+  "currency": " Dubloons",
+  "server": "Arctos' Desert",
   "channel": ["chatroom"],
-  "initRole": ["356642139997863946", "Badgers"],
-  "modRole": ["356161388760006656", "Iron Tusks"],
-  "devRole": ["450433073021190155", "Nightwings"],
+  "initRole": ["356642139997863946", "Armadillos"],
+  "modRole": ["356161388760006656", "Ironguards"],
+  "devRole": ["516427328503545857", "Blacksmiths"],
   "adminRole": ["356160238195441664", "Keepers"]
 }

@@ -1,9 +1,9 @@
 {
   "name": "BoC-botV.1",
   "version": "1.0.0",
-  "description": "Badgers of Camelot Discord Bot",
+  "description": "Arctos' Desert Discord Bot",
   "main": "client.js",
-  "author": "Green & Alattice",
+  "author": "PootDawg & Alattice",
   "dependencies": {
     "discord.js": "^11.3.2",
     "opusscript": "0.0.6",
