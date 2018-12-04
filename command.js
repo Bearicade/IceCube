@@ -22,10 +22,6 @@ module.exports = function () {
         "- jackpot [bet]: Gambling is fun, why don't you bet on it?"+"```");
         break;
 
-        case 'fetch':
-        msg.channel.send(msg.member._roles + config.devRole[0]);
-        break;
-
         case 'destroy': //Destroy the bot, but not really
         case 'kill':  //Disconnecting the client
         case 'die':
