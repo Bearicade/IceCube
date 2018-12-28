@@ -1,7 +1,7 @@
 {
-  "name": "BoC-botV.1",
+  "name": "IceCube-V.1",
   "version": "1.0.0",
-  "description": "Arctos' Desert Discord Bot",
+  "description": "IceCube Discord Bot",
   "main": "client.js",
   "author": "PootDawg & Alattice",
   "dependencies": {
