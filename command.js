@@ -54,7 +54,7 @@ module.exports = function () {
         if (isNaN(parseInt(args[0]))) {
           msg.channel.send("Invalid entry. Please enter number after " + prefix + "roll.");
         } else {
-          msg.channel.send(${msg.member} + " rolled a " + Math.ceil(Math.random() * args[0]) + "!");
+          msg.channel.send(`${msg.member} rolled a ` + Math.ceil(Math.random() * args[0]) + "!");
         } break;
 
         case 'jackpot':
