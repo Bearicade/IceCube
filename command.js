@@ -25,7 +25,7 @@ module.exports = function () {
         case 'destroy': //Destroy the bot, but not really
         case 'kill':  //Disconnecting the client
         case 'die':
-        if ((msg.member._roles.includes(config.devRole[0]||config.adminRole[0]))) {
+        if ((msg.member._roles.includes(config.adminRole[0]))) {
           msg.channel.send(randomFrom(media.exits));
           client.destroy();
         } else {

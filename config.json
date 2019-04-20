@@ -1,10 +1,10 @@
 {
   "prefix": "$",
-  "currency": " Dubloons",
-  "server": "Arctos' Desert",
-  "channel": ["chatroom"],
-  "initRole": ["356642139997863946", "Armadillos"],
+  "currency": " Doubloons",
+  "server": "KryOS Wing",
+  "channel": ["568935884838273067", "chatroom"],
+  "initRole": ["568935414732161063", "Survivors"],
   "modRole": ["356161388760006656", "Ironguards"],
   "devRole": ["518268189742727177", "Blacksmiths"],
-  "adminRole": ["356160238195441664", "Keepers"]
+  "adminRole": ["568930708341391361", "Pilots"]
 }

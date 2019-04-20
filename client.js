@@ -39,7 +39,7 @@ client.on('guildMemberAdd', member => {
   });
 
   //Welcomes user an finds the channel using member properties
-  member.guild.channels.find('name', config.channel[0])
+  member.guild.channels.find('id', config.channel[0])
   .send('Welcome to ' + config.server + `, ${member}. You are now one of our ` + config.initRole[1] + '!');
 });
 
