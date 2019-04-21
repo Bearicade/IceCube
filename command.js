@@ -14,7 +14,7 @@ module.exports = function () {
 
         case 'list':  //lists the public commands
         msg.channel.send("```These are my current commands:\n\n" +
-        "- ping: Pong!\n" +
+        "- ping: Pong!\n" + //need to change this to actual ping command (test ping from user/server/target to bot)
         "- marco: Polo!\n" +
         "- hello: Say hi to me!\n" +
         "- roll [#]: I'll roll a random number within your specified parameter.\n" +
@@ -54,12 +54,12 @@ module.exports = function () {
         if (isNaN(parseInt(args[0]))) {
           msg.channel.send("Invalid entry. Please enter number after " + prefix + "roll.");
         } else {
-          msg.channel.send(`${msg.member} rolled a ` + Math.ceil(Math.random() * args[0]) + "!");
+          msg.channel.send(`${msg.member}, you rolled a ` + Math.ceil(Math.random() * args[0]) + "!");
         } break;
 
         case 'jackpot':
         if (isNaN(parseInt(args[0]))) {
-          msg.channel.send("Uh, what?")
+          msg.channel.send("Please add your bet.")
           return;
         }else{
           checkDirAdd(msg);
